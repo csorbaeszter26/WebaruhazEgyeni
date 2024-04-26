@@ -1,0 +1,16 @@
+* {
+    margin: 20;
+    padding: 2px;
+    box-sizing: border-box;
+
+}
+
+.row {
+    margin: auto;
+}
+
+.termekek{
+    display: flex;
+}
+
+

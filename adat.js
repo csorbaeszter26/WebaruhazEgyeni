@@ -3,7 +3,7 @@ export const termekekLISTA = [
         nev: "Bohémian Betyars",
         hely: "Budapest Park",
         kep: "kepek/bohem2.png",
-        leiras: "Az első és egyben utolsó Budapesti koncertre mindenképpen gyertek el a Budapestparkba megünnepelni a banda 15.stületésnapját! Kétség sincs afelől, hogy a fiúk fergetes bulit fognak nektek összecsapni, tbb vendégelőadóval együtt.",
+        leiras: "Az első és egyben utolsó Budapesti koncertre mindenképpen gyertek el a Budapestparkba megünnepelni a banda 15.stületésnapját! Kétség sincs afelől, hogy a fiúk fergetes bulit fognak nektek összecsapni, több vendégelőadóval együtt.",
         ar: 8000,
         datum: "2024.05.31."
     },
