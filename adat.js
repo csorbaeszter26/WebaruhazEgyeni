@@ -22,6 +22,31 @@ export const termekekLISTA = [
         leiras: "...",
         ar: 4500,
         datum: "2024.05.09."
+    },
+    //br
+    {
+        nev: "HIPERKARMA",
+        hely: "A38",
+        kep: "kepek/hakumba2.jpg",
+        leiras: "...",
+        ar: 4500,
+        datum: "2024.05.09."
+    },
+    {
+        nev: "Belga",
+        hely: "A38",
+        kep: "kepek/hakumba2.jpg",
+        leiras: "...",
+        ar: 4500,
+        datum: "2024.05.09."
+    },
+    {
+        nev: "Ivan & The Parazol",
+        hely: "A38",
+        kep: "kepek/hakumba2.jpg",
+        leiras: "...",
+        ar: 4500,
+        datum: "2024.05.09."
     }
 
 ]

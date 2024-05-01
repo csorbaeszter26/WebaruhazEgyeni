@@ -27,10 +27,45 @@
     <main>
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="menu"></div>
+        <div class="rendezes" class="dropdown">
+            <button id="rendezes" type="button" class="btn bg-white color-blak dropdown-toggle" data-bs-toggle="dropdown">Rendezés
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                  <a id="nevNovekno" class="dropdown-item" href="#">Név szerint növekvő</a>
+                </li>
+                <li>
+                  <a id="nevCsokkeno" class="dropdown-item" href="#">Név szerint csökkenő</a>
+                </li>
+                <li>
+                  <a id="arNovekvo" class="dropdown-item" href="#">Ár szerint növekvő</a>
+                </li>
+                <li>
+                  <a id="arCsokkeno" class="dropdown-item" href="#">Ár szerint csökkenő</a>
+                </li>
+                <li>
+                    <a id="datumNovekvo" class="dropdown-item" href="#">Dátum szerint növekvő</a>
+                </li>
+                <li>
+                    <a id="datumCsokkeno" class="dropdown-item" href="#">Dátum szerint csökkenő</a>
+                </li>
+            </ul>
+        </div>
+        <div class="szures">
+            <form>
+                <div class="be">
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    id="szuro"
+                    name="szuro"
+                    placeholder="keresés"
+                  />
+                </div>
+              </form>
+        </div>
       </nav>
 
-      <div class="rendezes"></div>
-      <div class="szures"></div>
       <div class="termekek">
         <article class="row">
           <div
@@ -39,8 +74,11 @@
         </article>
       </div>
       <aside>
+        <h2>Kosár:</h2>
         <div class="asideKosar"></div>
+        <h3 id="kuka">🗑️</h3>
       </aside>
+      <footer></footer>
     </main>
   </body>
 </html>

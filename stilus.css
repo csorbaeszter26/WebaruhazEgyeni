@@ -1,5 +1,5 @@
 * {
-    margin: 20;
+    margin: 0px;
     padding: 2px;
     box-sizing: border-box;
 
@@ -13,4 +13,52 @@
     display: flex;
 }
 
+main {
+    background-color: rgb(32,32,32);
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-areas:
+        "n  n"
+        "a  j"
+        "f  f";
+}
 
+
+article {
+    grid-area: a;
+}
+
+nav {
+    grid-area: n;
+}
+
+footer {
+    grid-area: f;
+}
+
+aside {
+    grid-area: j;
+}
+
+
+.asideKosar{
+    color: #DC4C64;
+    text-align: left;
+    
+}
+
+aside{
+    border: 2px solid #DC4C64;
+    border-radius: 7px;
+}
+
+aside h2{
+    color: white;
+    margin: 17px;;
+}
+
+
+.menu a{
+    color: #DC4C64;
+    font-size: 24px;
+}
