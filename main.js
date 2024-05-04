@@ -6,7 +6,7 @@ import { rendezAr, rendezDatum, rendezNev, torol } from "./adatkezelo.js";
 //ide meghivok mindent is:
 init(termekekLISTA);
 export function init(lista) {
-  megjelenitNav(htmlOsszeallitNav(lista));
+  //megjelenitNav(htmlOsszeallitNav(lista));
   megjelenitKartya(htmlOsszeallitKartyak(lista));
   //kosar(termekekLISTA);
   kosar(termekekLISTA);

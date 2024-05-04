@@ -1,8 +1,8 @@
 import { termekekLISTA } from "./adat.js";
 import { init } from "./main.js";
 import { rendezAr, rendezNev, rendezDatum, torol } from "./adatkezelo.js";
- const kosarLISTA = [];
- const osszesenKI = 0;
+const kosarLISTA = [];
+const osszesenKI = 0;
 //menu:
 export function htmlOsszeallitNav() {
   let menuLista = ["Termékeink", "Kosár", "Személyes Adatok"];
@@ -11,7 +11,9 @@ export function htmlOsszeallitNav() {
   txtN += `<div class='container-fluid'>`;
   txtN += `<ul class="navbar-nav">`;
   for (let index = 0; index < menuLista.length; index++) {
-    txtN += `<li class="nav-item"><a class="${jeloles +1} nav-link" href='index.html'>${menuLista[index]}</a></li>`;
+    txtN += `<li class="nav-item"><a class="${
+      jeloles + 1
+    } nav-link" href='index.html'>${menuLista[index]}</a></li>`;
   }
   txtN += `</ul>`;
   txtN += `</div>`;
@@ -79,13 +81,12 @@ export function rendezEsemeny(lista) {
   const datumELEMcsok = $("#datumCsokkeno");
 
   nevELEMnov.on("click", function () {
-    const rLISTA = rendezNev(lista, 1,"nev");
+    const rLISTA = rendezNev(lista, 1, "nev");
     init(rLISTA);
   });
   nevELEMcsok.on("click", function () {
-    const rLISTA = rendezNev(lista, -1,"nev");
+    const rLISTA = rendezNev(lista, -1, "nev");
     init(rLISTA);
-    
   });
   arELEMnov.on("click", function () {
     const rLISTA = rendezAr(lista, 1);
@@ -94,7 +95,6 @@ export function rendezEsemeny(lista) {
   arELEMcsok.on("click", function () {
     const rLISTA = rendezAr(lista, -1);
     init(rLISTA);
-    
   });
   datumELEMnov.on("click", function () {
     const rLISTA = rendezNev(lista, 1, "datum");
@@ -103,11 +103,10 @@ export function rendezEsemeny(lista) {
   datumELEMcsok.on("click", function () {
     const rLISTA = rendezNev(lista, -1, "datum");
     init(rLISTA);
-    
   });
 }
 
-//kosar!!: 
+//kosar!!:
 export function kosar(termekekLISTA) {
   const gombELEM = $(".gomb");
   const asideKosar = $(".asideKosar");
@@ -117,37 +116,36 @@ export function kosar(termekekLISTA) {
     kosarLISTA.push(termekekLISTA[index]);
     console.log(kosarLISTA);
     //osszesenKI += termekekLISTA[index].ar;
-    megjelenitKosar(kosarOsszeallit(kosarLISTA) )
+    megjelenitKosar(kosarOsszeallit(kosarLISTA));
     //osszesenELEM.append(` ${termekekLISTA[index].ar}, ${osszesenKI} Ft`);
-    // !!!!!!!!!!!!!! hogy legyenek egymas mellett...?:( 
+    // !!!!!!!!!!!!!! hogy legyenek egymas mellett...?:(
   });
-
 }
 
 export function kosarOsszeallit(kLista) {
-    let txt = "<ul>";
-    kLista.forEach((element, i) => {
-        txt += (`<li>${element.nev}: ${element.ar} Ft <button id="${i}" type="button" class="torles btn bg-white color-black" >Torles</button></li>`);
-    });  
-    txt += "</ul>"
-    console.log(txt);
-    return txt;
+  let txt = "<ul>";
+  kLista.forEach((element, i) => {
+    txt += `<li>${element.nev}: ${element.ar} Ft <button id="${i}" type="button" class="torles btn bg-white color-black" >Torles</button></li>`;
+  });
+  txt += "</ul>";
+  console.log(txt);
+  return txt;
 }
 
 export function megjelenitKosar(txt) {
-    const kosarDivELEM = $(".asideKosar");
-    kosarDivELEM.html(txt);
-  }
+  const kosarDivELEM = $(".asideKosar");
+  kosarDivELEM.html(txt);
+}
 
-  export function osszesitesMegjelenit(){
-    const osszesenELEM = $(".osszesenKiiras");
-    const gombELEM = $(".gomb");
-    gombELEM.on("click", function (event) {
-        let index = event.target.id;
-        osszesenKI.push(termekekLISTA[index].ar);
-        console.log(osszesenKI);
-    });
-  }
+export function osszesitesMegjelenit() {
+  const osszesenELEM = $(".osszesenKiiras");
+  const gombELEM = $(".gomb");
+  gombELEM.on("click", function (event) {
+    let index = event.target.id;
+    osszesenKI.push(termekekLISTA[index].ar);
+    console.log(osszesenKI);
+  });
+}
 
 //const gombELEM = $(".gomb");
 
@@ -155,7 +153,6 @@ export function megjelenitKosar(txt) {
 //kosarMegjelenit(kosarLISTA);
 //console.log(lista);
 //});
-
 
 //kosar: OK (felesleges)
 export function kosarr(lista) {
@@ -199,7 +196,7 @@ export function torolEsemeny(termekekLISTA, kosarLISTA) {
   torolGOMB.on("click", function (event) {
     let id = event.target.id;
     //const LISTA = torol(termekekLISTA, id);
-    torol(kosarLISTA, id)
+    torol(kosarLISTA, id);
     init(termekekLISTA, kosarLISTA);
   });
 }
