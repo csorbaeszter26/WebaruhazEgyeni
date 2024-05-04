@@ -1,6 +1,6 @@
 import { termekekLISTA } from "./adat.js";
-import { htmlOsszeallitKartyak, htmlOsszeallitNav, megjelenitKartya, megjelenitNav, kosar, kosarMegjelenit, rendezEsemeny, torolEsemeny } from "./fuggvenyek.js";
-import { rendezAr, rendezDatum, rendezNev } from "./adatkezelo.js";
+import { htmlOsszeallitKartyak, htmlOsszeallitNav, megjelenitKartya, megjelenitNav, kosar, rendezEsemeny, torolEsemeny, kosarOsszeallit, megjelenitKosar, osszesitesMegjelenit } from "./fuggvenyek.js";
+import { rendezAr, rendezDatum, rendezNev, torol } from "./adatkezelo.js";
 
 
 //ide meghivok mindent is:
@@ -9,12 +9,13 @@ export function init(lista) {
   megjelenitNav(htmlOsszeallitNav(lista));
   megjelenitKartya(htmlOsszeallitKartyak(lista));
   //kosar(termekekLISTA);
-  kosarMegjelenit(kosar(termekekLISTA));
-  rendezEsemeny();
+  kosar(termekekLISTA);
+  osszesitesMegjelenit();
+  
   //szuresEsemeny();
   torolEsemeny();
 }
-rendezEsemeny();
+rendezEsemeny(termekekLISTA);
 
 //console.log(termekekLISTA);
 

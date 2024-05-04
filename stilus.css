@@ -42,9 +42,10 @@ aside {
 
 
 .asideKosar{
-    color: #DC4C64;
+    color: white;
     text-align: left;
-    
+    margin: 10px;
+    font-size: 20px;
 }
 
 aside{
@@ -54,11 +55,22 @@ aside{
 
 aside h2{
     color: white;
-    margin: 17px;;
+    margin: 17px;
 }
 
 
 .menu a{
     color: #DC4C64;
     font-size: 24px;
+}
+
+
+.osszesenKiiras {
+    text-align: right;
+    color: white;
+    padding-right: 20px;
+}
+
+.torles {
+    text-align: right;
 }

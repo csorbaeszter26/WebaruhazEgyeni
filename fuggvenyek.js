@@ -1,15 +1,17 @@
 import { termekekLISTA } from "./adat.js";
 import { init } from "./main.js";
-import { rendezAr, rendezNev, rendezDatum } from "./adatkezelo.js";
-
+import { rendezAr, rendezNev, rendezDatum, torol } from "./adatkezelo.js";
+ const kosarLISTA = [];
+ const osszesenKI = 0;
 //menu:
 export function htmlOsszeallitNav() {
   let menuLista = ["Termékeink", "Kosár", "Személyes Adatok"];
   let txtN = "";
+  let jeloles = 0;
   txtN += `<div class='container-fluid'>`;
   txtN += `<ul class="navbar-nav">`;
   for (let index = 0; index < menuLista.length; index++) {
-    txtN += `<li class="nav-item"><a class="nav-link" href='index.html'>${menuLista[index]}</a></li>`;
+    txtN += `<li class="nav-item"><a class="${jeloles +1} nav-link" href='index.html'>${menuLista[index]}</a></li>`;
   }
   txtN += `</ul>`;
   txtN += `</div>`;
@@ -66,9 +68,9 @@ export function szuresEsemeny() {
   });
 }
 
-//rendezes: ???????
-let irany = 1;
-export function rendezEsemeny() {
+//rendezes: OK
+
+export function rendezEsemeny(lista) {
   const nevELEMnov = $("#nevNovekno");
   const nevELEMcsok = $("#nevCsokkeno");
   const arELEMnov = $("#arNovekvo");
@@ -77,47 +79,76 @@ export function rendezEsemeny() {
   const datumELEMcsok = $("#datumCsokkeno");
 
   nevELEMnov.on("click", function () {
-    const rLISTA = rendezNev(emberekLISTA, irany);
+    const rLISTA = rendezNev(lista, 1,"nev");
     init(rLISTA);
   });
   nevELEMcsok.on("click", function () {
-    const rLISTA = rendezNev(emberekLISTA, irany);
+    const rLISTA = rendezNev(lista, -1,"nev");
     init(rLISTA);
-    irany *= -1;
+    
   });
   arELEMnov.on("click", function () {
-    const rLISTA = rendezAr(emberekLISTA, irany);
+    const rLISTA = rendezAr(lista, 1);
     init(rLISTA);
   });
   arELEMcsok.on("click", function () {
-    const rLISTA = rendezNev(emberekLISTA, irany);
+    const rLISTA = rendezAr(lista, -1);
     init(rLISTA);
-    irany *= -1;
+    
   });
   datumELEMnov.on("click", function () {
-    const rLISTA = rendezNev(emberekLISTA, irany);
+    const rLISTA = rendezNev(lista, 1, "datum");
     init(rLISTA);
   });
   datumELEMcsok.on("click", function () {
-    const rLISTA = rendezNev(emberekLISTA, irany);
+    const rLISTA = rendezNev(lista, -1, "datum");
     init(rLISTA);
-    irany *= -1;
+    
   });
 }
 
-//kosar!!:
+//kosar!!: 
 export function kosar(termekekLISTA) {
-  const kosarLISTA = [];
   const gombELEM = $(".gomb");
   const asideKosar = $(".asideKosar");
+  const osszesenELEM = $(".osszesenKiiras");
   gombELEM.on("click", function (event) {
     let index = event.target.id;
     kosarLISTA.push(termekekLISTA[index]);
     console.log(kosarLISTA);
-    // asideKosar.append(termekekLISTA[index].nev,termekekLISTA[index].ar);
+    //osszesenKI += termekekLISTA[index].ar;
+    megjelenitKosar(kosarOsszeallit(kosarLISTA) )
+    //osszesenELEM.append(` ${termekekLISTA[index].ar}, ${osszesenKI} Ft`);
+    // !!!!!!!!!!!!!! hogy legyenek egymas mellett...?:( 
   });
-  return kosarLISTA;
+
 }
+
+export function kosarOsszeallit(kLista) {
+    let txt = "<ul>";
+    kLista.forEach((element, i) => {
+        txt += (`<li>${element.nev}: ${element.ar} Ft <button id="${i}" type="button" class="torles btn bg-white color-black" >Torles</button></li>`);
+    });  
+    txt += "</ul>"
+    console.log(txt);
+    return txt;
+}
+
+export function megjelenitKosar(txt) {
+    const kosarDivELEM = $(".asideKosar");
+    kosarDivELEM.html(txt);
+  }
+
+  export function osszesitesMegjelenit(){
+    const osszesenELEM = $(".osszesenKiiras");
+    const gombELEM = $(".gomb");
+    gombELEM.on("click", function (event) {
+        let index = event.target.id;
+        osszesenKI.push(termekekLISTA[index].ar);
+        console.log(osszesenKI);
+    });
+  }
+
 //const gombELEM = $(".gomb");
 
 //gombELEM.on("click", function () {
@@ -125,10 +156,8 @@ export function kosar(termekekLISTA) {
 //console.log(lista);
 //});
 
-export function kosarMegjelenit(lista) {
-  //html listat osszeallitok es azt jelenitem
-}
-//kosar:
+
+//kosar: OK (felesleges)
 export function kosarr(lista) {
   //const kosarLISTA = [];
 
@@ -165,12 +194,13 @@ export function kosarr(lista) {
 //kosarbatesz fuggveny, kosarlista
 
 //torlesesemeny:
-export function torolEsemeny() {
-  const torolGOMB = $(".kuka");
+export function torolEsemeny(termekekLISTA, kosarLISTA) {
+  const torolGOMB = $(".torles");
   torolGOMB.on("click", function (event) {
     let id = event.target.id;
-    const LISTA = torol(emberekLISTA, id);
-    init(LISTA);
+    //const LISTA = torol(termekekLISTA, id);
+    torol(kosarLISTA, id)
+    init(termekekLISTA, kosarLISTA);
   });
 }
 

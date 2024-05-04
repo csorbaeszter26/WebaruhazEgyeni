@@ -1,7 +1,7 @@
-export function rendezNev(lista, irany) {
+export function rendezNev(lista, irany,kulcs) {
   lista.sort(function (e1, e2) {
     let eredmeny = 1;
-    if (e1.nev < e2.nev) {
+    if (e1[kulcs] < e2[kulcs]) {
       eredmeny = -1;
     }
     return eredmeny * irany;
@@ -11,11 +11,8 @@ export function rendezNev(lista, irany) {
 
 export function rendezAr(lista, irany) {
   lista.sort(function (e1, e2) {
-    let eredmeny = 1;
-    if (e1.ar < e2.ar) {
-      eredmeny = -1;
-    }
-    return eredmeny * irany;
+    
+    return (e1.ar - e2.ar)  * irany;
   });
   return lista;
 }
@@ -32,7 +29,7 @@ export function rendezDatum(lista, irany) {
   return lista;
 }
 
-export function szures(lista, kereseoSzoveg) {
+export function szures(lista, keresoSzoveg) {
   // hogy keresek nem csak nevre???
 
   const szurtLISTA = lista.filter(function (koncert) {
@@ -59,7 +56,7 @@ export function szures(lista, kereseoSzoveg) {
         }
       }
     }
-    return koncert.nev.toUpperCase().includes(kereseoSzoveg.toUpperCase());
+    return koncert.nev.toUpperCase().includes(keresoSzoveg.toUpperCase());
   });
   return szurtLISTA;
 }

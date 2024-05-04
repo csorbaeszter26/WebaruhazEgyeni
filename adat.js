@@ -25,7 +25,7 @@ export const termekekLISTA = [
     },
     //br
     {
-        nev: "HIPERKARMA",
+        nev: "Aurevoir.",
         hely: "A38",
         kep: "kepek/hakumba2.jpg",
         leiras: "...",
