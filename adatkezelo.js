@@ -17,7 +17,6 @@ export function rendezAr(lista, irany) {
   return lista;
 }
 
-// datumra van kulon valami mas????
 export function rendezDatum(lista, irany) {
   lista.sort(function (e1, e2) {
     let eredmeny = 1;
