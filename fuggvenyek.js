@@ -2,7 +2,8 @@ import { termekekLISTA } from "./adat.js";
 import { init } from "./main.js";
 import { rendezAr, rendezNev, rendezDatum, torol } from "./adatkezelo.js";
 const kosarLISTA = [];
-const osszesenKI = 0;
+
+//*********************************************************
 //menu: OK
 export function htmlOsszeallitNav() {
   let menuLista = ["Termékeink", "Kosár", "Személyes Adatok"];
@@ -26,6 +27,7 @@ export function megjelenitNav(txtN) {
   menuDivELEM.html(txtN);
 }
 
+//*********************************************************
 //kartyak: OK
 export function htmlOsszeallitKartyak(termekekLISTA) {
   let txt = "";
@@ -59,6 +61,7 @@ export function megjelenitKartya(txt) {
   menuDivELEM.html(txt);
 }
 
+//*********************************************************
 //szures: ??????????????
 export function szuresEsemeny() {
   const keresoELEM = $("#szures");
@@ -70,6 +73,7 @@ export function szuresEsemeny() {
   });
 }
 
+//*********************************************************
 //rendezes: OK
 
 export function rendezEsemeny(lista) {
@@ -106,6 +110,7 @@ export function rendezEsemeny(lista) {
   });
 }
 
+//*********************************************************
 //kosar!!: OK
 export function kosar(termekekLISTA) {
   const gombELEM = $(".gomb");
@@ -116,10 +121,13 @@ export function kosar(termekekLISTA) {
     console.log(kosarLISTA);
     //osszesenKI += termekekLISTA[index].ar;
     megjelenitKosar(kosarOsszeallit(kosarLISTA));
+  //return kosarLISTA
+    
     //osszesenELEM.append(` ${termekekLISTA[index].ar}, ${osszesenKI} Ft`);
     // !!!!!!!!!!!!!! hogy legyenek egymas mellett...?:(
   });
 }
+
 export function kosarOsszeallit(kLista) {
   let txt = "<table class='table'><tbody>";
   kLista.forEach((element, i) => {
@@ -148,25 +156,53 @@ export function megjelenitKosar(txt) {
   kosarDivELEM.html(txt);
 }
 
+//*********************************************************
 //osszesitett ar:
 /*
-export function osszesitesMegjelenit(lista) {
+export function osszesitesMegjelenit(kosarLISTA) {
+    
+    let osszesen = 0;
   const osszesenELEM = $(".osszesenKiiras");
   const gombELEM = $(".gomb");
   gombELEM.on("click", function (event) {
     let index = event.target.id;
-    for (i = 0, i < lista.length, i++){
-        osszesenKI += lista[i].ar;
+    console.log(osszesenKI);
+    for (index = 0; index < kosarLISTA.length; index++) {
+        osszesenKI += kosarLISTA.ar;
+        return osszesenKI
     }
+    //lista.forEach(element => {
+    //    osszesenKI += ;
+    //});
+    console.log(osszesenKI);
+
+    //for (index = 0; index < lista.length; i++){
+      //  osszesenKI += lista[i].ar;
+    //}
+    
+      
+    });
 
     //osszesenKI.push(termekekLISTA[index].ar);
-    console.log(osszesenKI);
-  });
+    
+  
 }
 */
+export function osszeadas(kosarLISTA) {
+    let osszesTomb = [];
+    let osszeg = 0;
+    const gombELEM = $(".gomb");
+    gombELEM.on("click", function (event) {
+        let index = event.target.id;
+        osszesTomb.push(index.ar);
+        console.log(osszesTomb);
+    });
+
+}
 
 
 
+//*********************************************************
 //torlesesemeny:
 //termekekLISTA, kosarLISTA
 export function torolEsemeny() {
