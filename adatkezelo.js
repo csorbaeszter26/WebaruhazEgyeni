@@ -1,4 +1,4 @@
-export function rendezNev(lista, irany,kulcs) {
+export function rendezNev(lista, irany, kulcs) {
   lista.sort(function (e1, e2) {
     let eredmeny = 1;
     if (e1[kulcs] < e2[kulcs]) {
@@ -11,8 +11,7 @@ export function rendezNev(lista, irany,kulcs) {
 
 export function rendezAr(lista, irany) {
   lista.sort(function (e1, e2) {
-    
-    return (e1.ar - e2.ar)  * irany;
+    return (e1.ar - e2.ar) * irany;
   });
   return lista;
 }

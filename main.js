@@ -1,5 +1,5 @@
 import { termekekLISTA } from "./adat.js";
-import { htmlOsszeallitKartyak, htmlOsszeallitNav, megjelenitKartya, megjelenitNav, kosar, rendezEsemeny, torolEsemeny, kosarOsszeallit, megjelenitKosar, osszeadas } from "./fuggvenyek.js";
+import { htmlOsszeallitKartyak, htmlOsszeallitNav, megjelenitKartya, megjelenitNav, kosar, rendezEsemeny, torolEsemeny, kosarOsszeallit, megjelenitKosar, osszeadas, szuresEsemeny } from "./fuggvenyek.js";
 import { rendezAr, rendezDatum, rendezNev, torol } from "./adatkezelo.js";
 
 
@@ -12,7 +12,7 @@ export function init(lista) {
   kosar(termekekLISTA);
   //osszesitesMegjelenit(lista);
   osszeadas(lista);
-  //szuresEsemeny();
+  szuresEsemeny(lista);
   torolEsemeny();
 }
 rendezEsemeny(termekekLISTA);

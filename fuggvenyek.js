@@ -1,6 +1,6 @@
 import { termekekLISTA } from "./adat.js";
 import { init } from "./main.js";
-import { rendezAr, rendezNev, rendezDatum, torol } from "./adatkezelo.js";
+import { rendezAr, rendezNev, rendezDatum, torol, szures } from "./adatkezelo.js";
 const kosarLISTA = [];
 
 //*********************************************************
@@ -64,10 +64,10 @@ export function megjelenitKartya(txt) {
 //*********************************************************
 //szures: ??????????????
 export function szuresEsemeny() {
-  const keresoELEM = $("#szures");
+  const keresoELEM = $("#szuro");
   keresoELEM.on("keyup", function () {
     let kereseoSzoveg = keresoELEM.val();
-    const szLISTA = szures(emberekLISTA, kereseoSzoveg);
+    const szLISTA = szures(termekekLISTA, kereseoSzoveg);
     console.log(szLISTA);
     init(szLISTA);
   });
