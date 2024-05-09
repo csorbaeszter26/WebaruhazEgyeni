@@ -73,12 +73,12 @@ export const termekekLISTA = [
         datum: "2024.04.27."
     },
     {
-        nev: "HIPERKARMA",
-        hely: "Budapest Park",
-        kep: "kepek/hiperkarmaBBark.jpg",
-        leiras: "<br>Ez az év sem múlhat el Parkos HIPERKARMA koncert nélkül! <br><br>Az idén huszonnégy éves zenekar a kezdetektől rendszeres fellépője a Budapest Parknak, és rengeteg emlékezetes pillanattal, illetve felejthetetlen élménnyel lettek gazdagabbak azok, akik látták-hallották ott őket. <br>2024-es nyárváró koncertjük sok szempontból is rendkívül izgalmasnak ígérkezik: <br><br>Egyrészt tízéves lett a csapat harmadik albuma, a KONYHAREGÉNY, és ezt megünneplendő, régen játszott gyöngyszemek is fel fognak csendülni erről a korábban kissé háttérbe szorított lemezről. <br><br>A másik újdonság, hogy itt hallgathatjátok meg először élőben a május 1-jén megjelenő/megjelent vadonatúj HIPERKARMA számot, amely a TIK-TAK címet viseli, és amelynek külön érdekessége, hogy ez az első olyan HK-dal, amelyet a szerző Bérczesi Róbert teljesen józanul komponált. <br><br>Mindezek mellett természetesen előkerülnek majd az elmúlt huszonnégy év kihagyhatatlan HK-slágerei is, megtűzdelve további érdekességekkel, de nem szeretnénk lelőni minden poént, legyen elég annyi, hogy érdemes most meghallgatni Katit, Benőt, Sztivit és Robit, vagyis a kirobbanó formában lévő HIPERKARMA zenekart!",
-        ar: 6999,
-        datum: "2024.05.24."
+        nev: "Duckshell",
+        hely: "Budaörsi napok, Szabadság út",
+        kep: "kepek/Duckshell.jpg",
+        leiras: "<br>26. alkalommal rendezzük meg Budaörs legnagyobb ingyenes kulturális seregszemléjét: 1 város, 5 nap, 12 helyszín, 33 program, 180 közreműködő – a Budaörs Fesztivál minden korosztályt és stílust kielégítő műsor kínálattal várja vendégeit – nem kötelezi el magát egyetlen zenei műfaj mellett sem. <br>A választék és a kínálat rendkívül széles és sokszínű: a jazztől az elektronikus zenén és indie folkon át a komoly zenéig, a tánctól a képzőművészeti kiállításokon át a gyerek programokig minden megtalálható. <br><br>A Duckshell 2017 óta működő budapesti, világzenét játszó zenekar. Tömény tánczenéjükben magyar népzenei és dél-amerikai hatások is vannak. A bandában a székely és a cigány mellett van két brazil származású tag is, ezért a magyar és az angol mellett némelyik daluk portugálul íródott.",
+        ar: 0,
+        datum: "2024.05.11."
     },
     {
         nev: "Elefánt",
@@ -92,7 +92,7 @@ export const termekekLISTA = [
         nev: "Esti Kornél",
         hely: "Budapest Park",
         kep: "kepek/estikornelBBark.png",
-        leiras: "<br>🌘 Itt maradtam a Budapest Parkban 🌒 <br><br>Vendégek: <br><br>✨ Lázár tesók <br>✨ Bodor Áron: A csendesebb részem <br>✨ Rühös Foxi <br><br>Az Esti Kornél történetének első minifesztiválja május 9-én a Budapest Parkban. Tartsatok velünk az egészestés programon, aztán maradjunk ott együtt az éjszakában is! <br><br>100 perces, „rendes” zúzós, együtt üvöltős koncerttel készülünk, ahol pár dal erejéig megidézzük az ’Itt maradtam az Éjszakában’ lemez hangulatát, komolyzenei kísérettel és különleges látvánnyal. <br><br>A programot egy rejtélyes vendégprodukció nyitja, de vajon kiket és mit takar a Nappali Kornél All Stars? Hamarosan ez is kiderül. A helyetekben most nem késnénk az előzenekarról. <br><br>És nem vicceltünk a címmel, tényleg ott maradunk a Budapest Parkban, meg az éjszakában, a koncert után ugyanis egészen éjjelig az Esti Kornél tagjai váltják majd egymást DJ-pult mögött. Késő esti közönségtalálkozó? Bármi lehet! <br><br>Csapjatok le a jegyetekre és hagyjátok kint a valóságot! Gondoskodunk róla, hogy ne is akarjatok visszamenni.",
+        leiras: "<br>🌘 Itt maradtam a Budapest Parkban 🌒 <br><br>Vendégek: <br>✨ Lázár tesók <br>✨ Bodor Áron: A csendesebb részem <br>✨ Rühös Foxi <br><br>Az Esti Kornél történetének első minifesztiválja május 9-én a Budapest Parkban. Tartsatok velünk az egészestés programon, aztán maradjunk ott együtt az éjszakában is! <br><br>100 perces, „rendes” zúzós, együtt üvöltős koncerttel készülünk, ahol pár dal erejéig megidézzük az ’Itt maradtam az Éjszakában’ lemez hangulatát, komolyzenei kísérettel és különleges látvánnyal. <br><br>A programot egy rejtélyes vendégprodukció nyitja, de vajon kiket és mit takar a Nappali Kornél All Stars? Hamarosan ez is kiderül. A helyetekben most nem késnénk az előzenekarról. <br><br>Csapjatok le a jegyetekre és hagyjátok kint a valóságot! Gondoskodunk róla, hogy ne is akarjatok visszamenni.",
         ar: 6999,
         datum: "2024.05.09."
     }

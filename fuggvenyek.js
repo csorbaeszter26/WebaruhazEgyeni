@@ -1,7 +1,8 @@
 import { termekekLISTA } from "./adat.js";
-import { init } from "./main.js";
+import { init, kosarINIT } from "./main.js";
 import { rendezAr, rendezNev, rendezDatum, torol, szures } from "./adatkezelo.js";
-const kosarLISTA = [];
+
+let db = 1;
 
 //*********************************************************
 //menu: OK
@@ -62,12 +63,12 @@ export function megjelenitKartya(txt) {
 }
 
 //*********************************************************
-//szures: ??????????????
-export function szuresEsemeny() {
+//szures: ok
+export function szuresEsemeny(lista) {
   const keresoELEM = $("#szuro");
   keresoELEM.on("keyup", function () {
     let kereseoSzoveg = keresoELEM.val();
-    const szLISTA = szures(termekekLISTA, kereseoSzoveg);
+    const szLISTA = szures(lista, kereseoSzoveg);
     console.log(szLISTA);
     init(szLISTA);
   });
@@ -112,15 +113,28 @@ export function rendezEsemeny(lista) {
 
 //*********************************************************
 //kosar!!: OK
-export function kosar(termekekLISTA) {
+export function kosar(termekekLISTA, kosarLISTA) {
   const gombELEM = $(".gomb");
   //const osszesenELEM = $(".osszesenKiiras");
   gombELEM.on("click", function (event) {
     let index = event.target.id;
+    //meg kell nezni, h az kivalasztott elem a kosar listaban van e meóar? eldontes
+    //ha nincs mg benne, aakor hozzadaunk egy db:1 s ush a kosrhoz
+    //ha benne van, akkor annak az elemnek a db kulcst nveljk meg
+    
+    let i = 0;
+    while (i < kosarLISTA.length && index != kosarLISTA[index]) {
+        i++;
+    }
+
     kosarLISTA.push(termekekLISTA[index]);
-    console.log(kosarLISTA);
+    kosarINIT(kosarLISTA)
+    let osszar=kosarOsszeg(kLista)
+    //kiirjuk az osszarat a html elemben
+
+    //console.log(kosarLISTA);
     //osszesenKI += termekekLISTA[index].ar;
-    megjelenitKosar(kosarOsszeallit(kosarLISTA));
+    //megjelenitKosar(kosarOsszeallit(kosarLISTA), termekekLISTA, kosarLISTA);
   //return kosarLISTA
     
     //osszesenELEM.append(` ${termekekLISTA[index].ar}, ${osszesenKI} Ft`);
@@ -130,15 +144,17 @@ export function kosar(termekekLISTA) {
 
 export function kosarOsszeallit(kLista) {
   let txt = "<table class='table'><tbody>";
+  
   kLista.forEach((element, i) => {
     txt += `<tr>`
-    txt += `<td>${element.nev}: ${element.ar} Ft</td>`;
+    txt += `<td>${element.nev}: </td><td>${element.ar} Ft</td>`;
+    txt += `<td><input type="number" class="quantity" id = "A${i}" name="quantity" min="1" max="5" value = ${element.db}><label for="quantity">db</label></td>`;
     txt += `<td><button id="${i}" type="button" class="torlesGOMB">Törlés</button></td>`
     txt += `</tr>`;
   });
   //btn bg-white color-black
   txt += "</tbody></table>";
-  console.log(txt);
+  //console.log(txt);
   return txt;
 }
 /*export function kosarOsszeallit(kLista) {
@@ -154,6 +170,7 @@ export function kosarOsszeallit(kLista) {
 export function megjelenitKosar(txt) {
   const kosarDivELEM = $(".asideKosar");
   kosarDivELEM.html(txt);
+    
 }
 
 //*********************************************************
@@ -188,7 +205,7 @@ export function osszesitesMegjelenit(kosarLISTA) {
   
 }
 */
-export function osszeadas(kosarLISTA) {
+/*export function osszeadas(kosarLISTA) {
     let osszesTomb = [];
     let osszeg = 0;
     const gombELEM = $(".gomb");
@@ -198,22 +215,24 @@ export function osszeadas(kosarLISTA) {
         console.log(osszesTomb);
     });
 
-}
+}*/
 
 
 
 //*********************************************************
 //torlesesemeny:
 //termekekLISTA, kosarLISTA
-export function torolEsemeny() {
+export function torolEsemeny( kLista) {
+    console.log(kLista)
   const torolGOMB = $(".torlesGOMB");
   torolGOMB.on("click", function (event) {
     let id = event.target.id;
     //const LISTA = torol(termekekLISTA, id);
-    torol(kosarLISTA, id);
-    console.log(kosarLISTA)
-    init(termekekLISTA, kosarLISTA);
-    console.log(kosarLISTA)
+    console.log(kLista, id)
+    torol(kLista, id);
+ 
+    kosarINIT(kLista);
+  
   });
 }
 

@@ -32,3 +32,5 @@ listák:
 - szurtLista
 
 - divosszeallitLista
+
+fuggvenynev, arameterek, visszateresi ertek, ...
