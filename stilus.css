@@ -14,6 +14,7 @@
 }
 
 main {
+    padding: 10px;
     background-color: rgb(32,32,32);
     display: grid;
     grid-template-columns: 6fr 2fr;
@@ -69,6 +70,11 @@ table{
 
 
 .osszesenKiiras {
+    text-align: right;
+    color: white;
+    padding-right: 20px;
+}
+.osszesenKiirasDiv {
     text-align: right;
     color: white;
     padding-right: 20px;
