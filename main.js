@@ -10,6 +10,9 @@ import {
   kosarOsszeallit,
   megjelenitKosar,
   szuresEsemeny,
+  urlapOsszeallit,
+  megjelenitUrlap,
+  darabEmelkedeseKattEsemeny
 } from "./fuggvenyek.js";
 import { rendezAr, rendezDatum, rendezNev, torol } from "./adatkezelo.js";
 
@@ -17,15 +20,12 @@ const kosarLISTA = [];
 //ide meghivok mindent is:
 init(termekekLISTA, kosarLISTA);
 export function init(lista) {
-  // csak a termkek megjelenitesevel kacsolats fuggvenyeket
-
+  // csak a termkek megjelenitesevel kapcsolatos fuggvenyeket
   //megjelenitNav(htmlOsszeallitNav(lista));
   megjelenitKartya(htmlOsszeallitKartyak(lista));
-
   kosar(lista, kosarLISTA);
-
-  //osszesitesMegjelenit(lista);
-  //osszeadas(lista);
+  //megjelenitUrlap(urlapOsszeallit());
+  darabEmelkedeseKattEsemeny();
 }
 
 rendezEsemeny(termekekLISTA);
@@ -38,7 +38,3 @@ export function kosarINIT(kLISTA) {
 }
 
 //console.log(termekekLISTA);
-
-//rendezes:
-
-//szures:
