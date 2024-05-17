@@ -148,6 +148,9 @@ img {
 .card-header{
     border-bottom: 3px solid #ae2a40;
 }
+.veszem{
+    text-align: right;
+}
 
 /*transform: scale(1.10);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);*/

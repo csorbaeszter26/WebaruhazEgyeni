@@ -118,6 +118,7 @@ export function rendezEsemeny(lista) {
 //kosar!!: OK
 export function kosar(termekekLISTA, kosarLISTA) {
   const gombELEM = $(".gomb");
+  
   //const osszesenELEM = $(".osszesenKiiras");
   gombELEM.on("click", function (event) {
     let index = event.target.id;
@@ -146,6 +147,8 @@ export function kosar(termekekLISTA, kosarLISTA) {
 
     kosarINIT(kosarLISTA);
     osszegMegjelenit(kosarLISTA);
+    
+    megjelenitUrlap(urlapOsszeallit());
 
     //kiirjuk az osszarat a html elemben
 
@@ -201,7 +204,7 @@ export function osszegMegjelenit(kLista) {
       "Összesen: " +
         osszar +
         " Ft" +
-        `<br><button id="veszem" type="button" class="gomb veszem btn btn-success btn-danger">Megveszem</button>`
+        `<br><button id="tovabb" type="button" class="gomb tovabb btn btn-success btn-danger">Tovább</button>`
     );
   } else if (osszar === 0) {
     osszesElem.html("");
@@ -216,7 +219,7 @@ export function darabEmelkedeseKattEsemeny(kLista) {
   dbELEM.on("change", function (event) {
     let ertek = dbELEM.val();
     console.log(ertek);
-
+    
     
   });
 }
@@ -242,11 +245,13 @@ export function torolEsemeny(kLista) {
 
 export function megjelenitUrlap(txt) {
   const urlapDivELEM = $(".asideKosar");
-  const urlapELEM = $(".veszem");
-  urlapELEM.on("click", function (event) {
-    console.log("urlap");
+  const urlapOsszesenTovabbGombELEM = $(".tovabb");
+  urlapOsszesenTovabbGombELEM.on("click", function (event) {
+    //console.log("urlap");
     let i = event.target.id;
+    urlapOsszesenTovabbGombELEM.hide();
     urlapDivELEM.html(txt);
+ 
   });
 }
 //export function urlapEsemeny(txt){
@@ -262,18 +267,45 @@ export function urlapOsszeallit() {
   let txt = "";
 
   txt += `<form>`;
-  txt += `<div class="form-group"><label for="EmailBe">Email cím</label><input type="email" class="form-control" id="EmailBe" aria-describedby="emailHelp" placeholder="Email cím"></div>`;
-  txt += `<div class="form-group"><label for="VezetekNevBe">Vezetéknév</label><input type="vezeteknev" class="form-control" id="VezetekNevBe" aria-describedby="emailHelp" placeholder="Vezetéknév"></div>`;
-  txt += `<div class="form-group"><label for="KeresztNevBe">Keresztnév</label><input type="keresztnev" class="form-control" id="KeresztNevBe" aria-describedby="emailHelp" placeholder="Keresztnév"></div>`;
-  txt += `<div data-mdb-input-init class="form-outline"><input type="tel" id="typePhone" class="form-control" /><label class="form-label" for="typePhone">Telefonszám</label></div>`;
+  //email:
+  txt += `<div class="form-group"><input type="email" class="form-control" id="EmailBe" aria-describedby="emailHelp" placeholder="Email cím"></div>`;
+  // <label for="EmailBe">Email cím</label>
+  //vezeteknev:
+  txt += `<div class="form-group"><input type="vezeteknev" class="form-control" id="VezetekNevBe" aria-describedby="emailHelp" placeholder="Vezetéknév"></div>`;
+  //keresztnev:
+  txt += `<div class="form-group"><input type="keresztnev" class="form-control" id="KeresztNevBe" aria-describedby="emailHelp" placeholder="Keresztnév"></div>`;
+  //tel:
+  txt += `<div data-mdb-input-init class="form-outline"><input type="tel" id="typePhone" class="form-control" placeholder="Telefonszám"></div>`;
+  //<label class="form-label" for="typePhone">Telefonszám</label>
+  //orszag:
   txt += `<div class="form-group"><input type="orszag" class="form-control" id="orszag" aria-describedby="emailHelp" placeholder="Ország"></div>`;
+  //iranyitoszam:
   txt += `<div class="form-group"><input type="iranyitoszam" class="form-control" id="iranyitoszam" aria-describedby="emailHelp" placeholder="Irányítószám"></div>`;
+  //varos:
   txt += `<div class="form-group"><input type="varos" class="form-control" id="varos" aria-describedby="emailHelp" placeholder="Város"></div>`;
+  //utca, hsz:
   txt += `<div class="form-group"><input type="utcaHazszam" class="form-control" id="utcaHazszam" aria-describedby="emailHelp" placeholder="Utca, házszám"></div>`;
+  //fizetesek:
   txt += `<div class="form-check"><input class="form-check-input" type="radio" name="fizetes" id="fizetesModszer" value="option1" checked><label class="form-check-label" for="fizetesModszer">Simple Pay</label></div>`;
   txt += `<div class="form-check"><input class="form-check-input" type="radio" name="fizetes" id="fizetesModszer" value="option2" checked><label class="form-check-label" for="fizetesModszer">SZÉP kártya</label></div>`;
-  txt += `<div class="form-check"><input class="form-check-input" type="checkbox" value="" id="defaultCheck1"><label class="form-check-label" for="defaultCheck1" required>A termék vásárlásával kijelentem, hogy elfogadom az Általános szerződési feltételeket, a Visszatérítési szabályzatot és az Adatkezelési Tájékoztatót.</label></div>`;
+  // KOTELEZO beleegyezo:
+  txt += `<div class="form-check"><input class="chb form-check-input" type="checkbox" value="" id="defaultCheck1" required><label class="form-check-label" for="defaultCheck1">A termék vásárlásával kijelentem, hogy elfogadom az Általános szerződési feltételeket, a Visszatérítési szabályzatot és az Adatkezelési Tájékoztatót.</label></div>`;
+  // hirlevel:
   txt += `<div class="form-check"><input class="form-check-input" type="checkbox" value="" id="defaultCheck2"><label class="form-check-label" for="defaultCheck2">Szeretnék feliratkozni a hírlevélre.</label></div>`;
+  // megveszem buttyon:
+  txt += `<br><button id="veszem" type="button" class="gomb veszem btn btn-success btn-danger">Megveszem</button>`
   txt += `</form>`;
+  
   return txt;
+}
+
+// megveszem uzenetek
+export function uzenetekMegveszemKiiras(){
+  const urlapVeszemGomb = $(".veszem");
+  const cBoxBeleegyezo = $(".chb");
+  urlapVeszemGomb.on("click", function (event) {
+    if (cBoxBeleegyezo.isChecked() == false){
+      
+    }
+  });
 }
