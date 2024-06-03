@@ -2,9 +2,97 @@
     margin: 0px;
     padding: 2px;
     box-sizing: border-box;
-    
-
 }
+
+.headerKep{
+    background-image: url("kepek/red-crowd2.jpg");
+    height: 45vh;
+    background-size: cover;
+    margin: 0px;
+    padding: 0%;
+}
+
+.cimDiv{
+    width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+.cim{
+    color: white;
+    padding: 60px;
+    /*display:inline-block;*/
+    font-size: 100px;
+    
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 0.8rem;
+  color: PaleGoldenRod;
+  outline: none;
+    
+}
+
+  
+  
+  
+ 
+
+
+.cim:hover {
+  font-variation-settings: "wght" 582; 
+  letter-spacing: 1px;
+}
+/*
+.cim span{
+        position: relative;
+        cursor:pointer;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        font-family: "Cabin", sans-serif;
+        font-size: 200%;
+}
+
+.cim span:hover{
+    /*transform: translateY(-5px);
+  /*Kártya megemelése hover esetén*/
+  /*box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  color: #ae2a40;
+  bottom: 0.15em;
+    color: transparent;
+    content: "ˍ";
+    display: block;
+    font-size: 120px !important;
+    height: 1em;
+    left: 26%;
+    position: absolute;
+    text-shadow: 0 0 11px #999;
+    width: 1em;*
+    color: white;
+    bottom: 0.2em;
+}
+
+.cim span::after{
+    content: "eszTicket";
+    color: transparent;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 5px 4px -4px #f5f3f3;
+    display: block;
+    left: 0%;
+    bottom:0.15em;
+    opacity:0;
+    text-shadow:none;
+}
+.cim span:hover::before{
+    opacity:1;
+}
+.cim span:hover::after{
+    opacity:10;
+}*/
 
 .row {
     margin: auto;
@@ -15,32 +103,31 @@
 }
 
 main {
-    padding: 20px;
+    padding: 30px;
     background-color: rgb(32,32,32);
     display: grid;
     grid-template-columns: 6fr 2fr;
     grid-template-areas:
-        "n  n"
-        "a  j"
-        "f  f";
+        "h h"
+        "n n"
+        "a j"
+        "f f";
 }
-
-
 article {
     grid-area: a;
 }
-
 nav {
     grid-area: n;
     padding-bottom: 50px;
 }
-
 footer {
     grid-area: f;
 }
-
 aside {
     grid-area: j;
+}
+header{
+    grid-area: h;
 }
 
 
@@ -50,14 +137,11 @@ aside {
     margin: 10px;
     font-size: 20px;
 }
-
-
 aside{
     border: 1.5px solid #ae2a40;
     border-radius: 7px;
     background-color:  rgb(32,32,32);
 }
-
 aside h2{
     color: white;
     margin: 17px;
